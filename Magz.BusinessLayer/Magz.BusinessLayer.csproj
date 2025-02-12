@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net9.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Magz.CoreLayer\Magz.CoreLayer.csproj" />
+      <ProjectReference Include="..\Magz.DataAccessLayer\Magz.DataAccessLayer.csproj" />
+      <ProjectReference Include="..\Magz.EntityLayer\Magz.EntityLayer.csproj" />
+    </ItemGroup>
+
+</Project>

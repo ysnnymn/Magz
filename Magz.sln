@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Magz.DataAccessLayer", "Magz.DataAccessLayer\Magz.DataAccessLayer.csproj", "{3EA924BD-A62F-4080-A6DC-08B6A047D684}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Magz.BusinessLayer", "Magz.BusinessLayer\Magz.BusinessLayer.csproj", "{3B0422A6-FB00-425D-8EC1-C292B1F76161}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Magz.EntityLayer", "Magz.EntityLayer\Magz.EntityLayer.csproj", "{7D6A0C02-1C9F-4AD3-B7A6-6AFEE9C1FE55}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Magz.CoreLayer", "Magz.CoreLayer\Magz.CoreLayer.csproj", "{21BFC0C3-DB41-4EB9-927B-698FA3D9DBC6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Magz.WebAPI", "Magz.WebAPI\Magz.WebAPI.csproj", "{2A27E384-8A1F-4D7E-832A-D528AF669FE7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3EA924BD-A62F-4080-A6DC-08B6A047D684}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3EA924BD-A62F-4080-A6DC-08B6A047D684}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3EA924BD-A62F-4080-A6DC-08B6A047D684}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3EA924BD-A62F-4080-A6DC-08B6A047D684}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3B0422A6-FB00-425D-8EC1-C292B1F76161}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B0422A6-FB00-425D-8EC1-C292B1F76161}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B0422A6-FB00-425D-8EC1-C292B1F76161}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B0422A6-FB00-425D-8EC1-C292B1F76161}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D6A0C02-1C9F-4AD3-B7A6-6AFEE9C1FE55}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D6A0C02-1C9F-4AD3-B7A6-6AFEE9C1FE55}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D6A0C02-1C9F-4AD3-B7A6-6AFEE9C1FE55}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D6A0C02-1C9F-4AD3-B7A6-6AFEE9C1FE55}.Release|Any CPU.Build.0 = Release|Any CPU
+		{21BFC0C3-DB41-4EB9-927B-698FA3D9DBC6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21BFC0C3-DB41-4EB9-927B-698FA3D9DBC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21BFC0C3-DB41-4EB9-927B-698FA3D9DBC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21BFC0C3-DB41-4EB9-927B-698FA3D9DBC6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A27E384-8A1F-4D7E-832A-D528AF669FE7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A27E384-8A1F-4D7E-832A-D528AF669FE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A27E384-8A1F-4D7E-832A-D528AF669FE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A27E384-8A1F-4D7E-832A-D528AF669FE7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
