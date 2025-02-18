@@ -1,4 +1,6 @@
 using Magz.BusinessLayer.Abstract;
+using Magz.BusinessLayer.Constants;
+using Magz.CoreLayer.Utilities.Results;
 using Magz.DataAccessLayer.Abstract;
 using Magz.EntityLayer.Concrete;
 
@@ -13,32 +15,35 @@ public class CategoryManager: ICategoryService
         _categoryDal = categoryDal;
     }
 
-    public List<Category>  TGetList()
+    public IDataResult<List<Category>>  TGetList()
     {
-        return _categoryDal.GetAll();
+        return new SuccessDataResult<List<Category>>(_categoryDal.GetAll());
     }
 
-    public Category  TGetById(int id)
+    public IDataResult<Category>  TGetById(int id)
     {
-return    _categoryDal.Get(x=>x.CategoryId == id);
+        return new SuccessDataResult<Category>(_categoryDal.Get(x => x.CategoryId == id));
 
     }
 
-    public void  TAdd(Category entity)
+    public IResult  TAdd(Category entity)
     {
 _categoryDal.Add(entity);
+return new SuccessResult(Messages.CategoryAdded);
 
     }
 
-    public void  TUpdate(Category entity)
+    public IResult  TUpdate(Category entity)
     {
 _categoryDal.Update(entity);
+return  new SuccessResult(Messages.CategoryUpdated);
 
     }
 
-    public void  TDelete(Category entity)
+    public IResult  TDelete(Category entity)
     {
 _categoryDal.Delete(entity);
+return new SuccessResult(Messages.CategoryDeleted);
 
     }
 }

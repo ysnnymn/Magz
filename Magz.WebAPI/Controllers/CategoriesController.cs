@@ -20,8 +20,8 @@ namespace Magz.WebAPI.Controllers
         [HttpGet]
         public IActionResult CategoryList()
         {
-           var value= _categoryService.TGetList();
-           return Ok(value);
+           var result= _categoryService.TGetList();
+           return Ok(result);
             
         }
 
@@ -35,22 +35,22 @@ namespace Magz.WebAPI.Controllers
         [HttpPost]
         public IActionResult CreateCategory(Category category)
         {
-            _categoryService.TAdd(category);
-            return Ok();
+           var result= _categoryService.TAdd(category);
+            return Ok(result.Message);
         }
 
         [HttpPut]
         public IActionResult UpdateCategory(Category category)
         {
-            _categoryService.TUpdate(category);
-            return Ok();
+           var result= _categoryService.TUpdate(category);
+            return Ok(result.Message);
         }
 
         [HttpDelete]
         public IActionResult DeleteCategory(Category category)
         {
-            _categoryService.TDelete(category);
-            return Ok();
+           var result= _categoryService.TDelete(category);
+            return Ok(result.Message);
         }
         
         

@@ -1,4 +1,6 @@
 using Magz.BusinessLayer.Abstract;
+using Magz.BusinessLayer.Constants;
+using Magz.CoreLayer.Utilities.Results;
 using Magz.DataAccessLayer.Abstract;
 using Magz.EntityLayer.Concrete;
 
@@ -13,31 +15,32 @@ public class AboutManager:IAboutService
         _aboutDal = aboutDal;
     }
 
-    public List<About>  TGetList()
+    public IDataResult<List<About>> TGetList()
     {
-        return _aboutDal.GetAll();
+        return new SuccessDataResult<List<About>>(_aboutDal.GetAll());
     }
 
-    public About  TGetById(int id)
+    public IDataResult<About> TGetById(int id)
     {
-       return _aboutDal.Get(x=>x.AboutId==id);
+        return new SuccessDataResult<About>(_aboutDal.Get(x => x.AboutId == id));
+        
     }
 
-    public void  TAdd(About entity)
+    public IResult TAdd(About entity)
     {
-_aboutDal.Add(entity);
-
+        _aboutDal.Add(entity);
+        return new SuccessResult(Messages.AboutCreated);
     }
 
-    public void  TUpdate(About entity)
+    public IResult TUpdate(About entity)
     {
 _aboutDal.Update(entity);
-
+return new SuccessResult(Messages.AboutUpdated);
     }
 
-    public void  TDelete(About entity)
+    public IResult TDelete(About entity)
     {
-   _aboutDal.Delete(entity);
-
+_aboutDal.Delete(entity);
+return new SuccessResult(Messages.AboutDeleted);
     }
 }

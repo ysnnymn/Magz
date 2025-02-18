@@ -1,4 +1,5 @@
 using Magz.BusinessLayer.Abstract;
+using Magz.CoreLayer.Utilities.Results;
 using Magz.DataAccessLayer.Abstract;
 
 namespace Magz.BusinessLayer.Concrete;
@@ -12,31 +13,36 @@ public class SocialMediaManager:ISocialMediaService
         _socialMediaDal = socialMediaDal;
     }
 
-    public List<SocialMedia>  TGetList()
+    public IDataResult<List<SocialMedia>>  TGetList()
     {
-return    _socialMediaDal.GetAll();
+return  new SuccessDataResult<List<SocialMedia>>(_socialMediaDal.GetAll())  ;
 
     }
 
-    public SocialMedia  TGetById(int id)
+    public IDataResult<SocialMedia>  TGetById(int id)
     {
-return    _socialMediaDal.Get(x=>x.SocialMediaId == id);}
+return new SuccessDataResult<SocialMedia>(_socialMediaDal.Get(x=>x.SocialMediaId == id))   ;
 
-    public void  TAdd(SocialMedia entity)
+    }
+
+    public IResult  TAdd(SocialMedia entity)
     {
 _socialMediaDal.Add(entity);
+return new SuccessResult();
 
     }
 
-    public void  TUpdate(SocialMedia entity)
+    public IResult  TUpdate(SocialMedia entity)
     {
 _socialMediaDal.Update(entity);
+return new SuccessResult();
 
     }
 
-    public void  TDelete(SocialMedia entity)
+    public IResult  TDelete(SocialMedia entity)
     {
 _socialMediaDal.Delete(entity);
+return new SuccessResult();
 
     }
 }

@@ -10,6 +10,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Magz.CoreLayer", "Magz.Core
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Magz.WebAPI", "Magz.WebAPI\Magz.WebAPI.csproj", "{2A27E384-8A1F-4D7E-832A-D528AF669FE7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Magz.WebUI", "Magz.WebUI\Magz.WebUI.csproj", "{3477A11D-9BF7-445F-ACAB-711A491A0E8A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -36,5 +38,9 @@ Global
 		{2A27E384-8A1F-4D7E-832A-D528AF669FE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2A27E384-8A1F-4D7E-832A-D528AF669FE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2A27E384-8A1F-4D7E-832A-D528AF669FE7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3477A11D-9BF7-445F-ACAB-711A491A0E8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3477A11D-9BF7-445F-ACAB-711A491A0E8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3477A11D-9BF7-445F-ACAB-711A491A0E8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3477A11D-9BF7-445F-ACAB-711A491A0E8A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

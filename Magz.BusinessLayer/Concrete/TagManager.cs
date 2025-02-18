@@ -1,4 +1,5 @@
 using Magz.BusinessLayer.Abstract;
+using Magz.CoreLayer.Utilities.Results;
 using Magz.DataAccessLayer.Abstract;
 using Magz.EntityLayer.Concrete;
 
@@ -13,30 +14,33 @@ public class TagManager:ITagService
         _tagDal = tagDal;
     }
 
-    public List<Tag> TGetList()
+    public IDataResult<List<Tag>> TGetList()
     {
-        return _tagDal.GetAll();
+        return new SuccessDataResult<List<Tag>>(_tagDal.GetAll()) ;
     }
 
-    public Tag TGetById(int id)
+    public IDataResult<Tag> TGetById(int id)
     {
-        return _tagDal.Get(x=>x.TagId == id);
+        return new SuccessDataResult<Tag>(_tagDal.Get(x=>x.TagId == id)) ;
     }
 
-    public void TAdd(Tag entity)
+    public IResult TAdd(Tag entity)
     {
          _tagDal.Add(entity);
+         return new SuccessResult();
     }
 
-    public void TUpdate(Tag entity)
+    public IResult TUpdate(Tag entity)
     {
 _tagDal.Update(entity);
+return new SuccessResult();
 
     }
 
-    public void TDelete(Tag entity)
+    public IResult TDelete(Tag entity)
     {
 _tagDal.Delete(entity);
+return new SuccessResult();
 
     }
 }

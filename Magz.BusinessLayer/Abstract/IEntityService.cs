@@ -1,14 +1,15 @@
 using Magz.CoreLayer.Entities;
+using Magz.CoreLayer.Utilities.Results;
 
 namespace Magz.BusinessLayer.Abstract;
 
 public interface IEntityService<T> where T : class,IEntity,new()
 {
-    List<T> TGetList();
-    T TGetById(int id);
-    void TAdd(T entity);
-    void TUpdate(T entity);
-    void TDelete(T entity);
+    IDataResult<List<T>> TGetList();
+    IDataResult<T> TGetById(int id);
+    IResult TAdd(T entity);
+    IResult TUpdate(T entity);
+    IResult TDelete(T entity);
    
     
 }

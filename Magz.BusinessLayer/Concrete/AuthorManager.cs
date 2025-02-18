@@ -1,4 +1,6 @@
 using Magz.BusinessLayer.Abstract;
+using Magz.BusinessLayer.Constants;
+using Magz.CoreLayer.Utilities.Results;
 using Magz.DataAccessLayer.Abstract;
 using Magz.EntityLayer.Concrete;
 
@@ -13,32 +15,37 @@ public class AuthorManager: IAuthorService
         _authorDal = authorDal;
     }
 
-    public List<Author>  TGetList()
+    public IDataResult<List<Author>>  TGetList()
     {
-        return _authorDal.GetAll();
+        return new SuccessDataResult<List<Author>>(_authorDal.GetAll()); 
     }
 
-    public Author  TGetById(int id)
+    public IDataResult<Author>  TGetById(int id)
     {
-return    _authorDal.Get(x=>x.AuthorId==id);
+return    new SuccessDataResult<Author>(_authorDal.Get(x=>x.AuthorId==id));
 
     }
 
-    public void  TAdd(Author entity)
+    public IResult  TAdd(Author entity)
     {
 _authorDal.Add(entity);
+return new SuccessResult(Messages.AuthorAdded);
+
 
     }
 
-    public void  TUpdate(Author entity)
+    public IResult  TUpdate(Author entity)
     {
 _authorDal.Update(entity);
+return new SuccessResult(Messages.AuthorUpdated);
+
 
     }
 
-    public void  TDelete(Author entity)
+    public IResult  TDelete(Author entity)
     {
 _authorDal.Delete(entity);
+return new SuccessResult(Messages.AuthorDeleted);
 
     }
 }

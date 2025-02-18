@@ -1,0 +1,55 @@
+
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+@await Component.InvokeAsync("_HeadComponentPartial")
+
+<body class="skin-orange">
+@await Component.InvokeAsync("_NavbarComponentPartial")
+
+<section class="home">
+    <div class="container">
+        <div class="row">
+            @await Component.InvokeAsync("_JustAnotherNewsComponentPartial")
+            <div class="col-xs-6 col-md-4 sidebar" id="sidebar">
+                <div class="sidebar-title for-tablet">Sidebar</div>
+             @await Component.InvokeAsync("_PopularAuthorComponentPartial")
+              @await Component.InvokeAsync("_PopularNewsComponentPartial")
+              
+                <aside>
+                    <ul class="nav nav-tabs nav-justified" role="tablist">
+                        <li class="active">
+                            <a href="#recomended" aria-controls="recomended" role="tab" data-toggle="tab">
+                                <i class="ion-android-star-outline"></i> Recomended
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#comments" aria-controls="comments" role="tab" data-toggle="tab">
+                                <i class="ion-ios-chatboxes-outline"></i> Comments
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="tab-content">
+                       @await Component.InvokeAsync("_RecomendedComponentPartial")
+                       @await Component.InvokeAsync("_LatestCommentsPartial")
+                    </div>
+                </aside>
+            
+               
+            </div>
+        </div>
+    </div>
+</section>
+
+@await Component.InvokeAsync("_BestOfWeekComponentPartial")
+
+<!-- Start footer -->
+@await Component.InvokeAsync("_FooterComponentPartial")
+<!-- End Footer -->
+
+<!-- JS -->
+@await Component.InvokeAsync("_ScriptComponentPartial")
+</body>
+</html>

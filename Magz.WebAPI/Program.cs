@@ -21,6 +21,22 @@ builder.Services.AddSwaggerGen(c =>
 builder.Services.AddScoped<ICategoryService, CategoryManager>();
 builder.Services.AddScoped<ICategoryDal, EfCategoryDal>();
 
+builder.Services.AddScoped<IAuthorService, AuthorManager>();
+builder.Services.AddScoped<IAuthorDal, EfAuthorDal>();
+
+builder.Services.AddScoped<IAboutService, AboutManager>();
+builder.Services.AddScoped<IAboutDal, EfAboutDal>();
+
+builder.Services.AddScoped<IContactService, ContactManager>();
+builder.Services.AddScoped<IContactDal, EfContactDal>();
+
+builder.Services.AddScoped<INewsService, NewsManager>();
+builder.Services.AddScoped<INewsDal, EfNewsDal>();
+
+builder.Services.AddScoped<ITagService, TagManager>();
+builder.Services.AddScoped<ITagDal, EfTagDal>();
+
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

@@ -1,4 +1,5 @@
 using Magz.BusinessLayer.Abstract;
+using Magz.CoreLayer.Utilities.Results;
 using Magz.DataAccessLayer.Abstract;
 using Magz.EntityLayer.Concrete;
 
@@ -13,31 +14,33 @@ public class ContactManager:IContactService
         _contactDal = contactDal;
     }
 
-    public List<Contact>  TGetList()
+    public IDataResult<List<Contact>>  TGetList()
     {
-        return _contactDal.GetAll();
+        return  new SuccessDataResult<List<Contact>>(_contactDal.GetAll());
     }
 
-    public Contact  TGetById(int id)
+    public IDataResult<Contact>  TGetById(int id)
     {
-        return _contactDal.Get(x => x.ContactId == id);
+        return new SuccessDataResult<Contact>(_contactDal.Get(x => x.ContactId == id)) ;
     }
 
-    public void  TAdd(Contact entity)
+    public IResult  TAdd(Contact entity)
     {
 _contactDal.Add(entity);
-
+return new SuccessResult();
     }
 
-    public void  TUpdate(Contact entity)
+    public IResult  TUpdate(Contact entity)
     {
 _contactDal.Update(entity);
+return new SuccessResult();
 
     }
 
-    public void  TDelete(Contact entity)
+    public IResult  TDelete(Contact entity)
     {
 _contactDal.Delete(entity);
+return new SuccessResult();
 
     }
 }

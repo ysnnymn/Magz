@@ -1,4 +1,6 @@
 using Magz.BusinessLayer.Abstract;
+using Magz.BusinessLayer.Constants;
+using Magz.CoreLayer.Utilities.Results;
 using Magz.DataAccessLayer.Abstract;
 using Magz.EntityLayer.Concrete;
 
@@ -13,32 +15,35 @@ public class NewsManager:INewsService
         _newsDal = newsDal;
     }
 
-    public List<News>  TGetList()
+    public IDataResult<List<News>>  TGetList()
     {
-        return _newsDal.GetAll();
+        return new SuccessDataResult<List<News>>(_newsDal.GetAll());
     }
 
-    public News  TGetById(int id)
+    public IDataResult<News>  TGetById(int id)
     {
-return    _newsDal.Get(x=>x.NewsId == id);
+return  new SuccessDataResult<News>(_newsDal.Get(x=>x.NewsId == id))  ;
 
     }
 
-    public void  TAdd(News entity)
+    public IResult  TAdd(News entity)
     {
  _newsDal.Add(entity);
+ return new SuccessResult(Messages.NewsAdded);
 
     }
 
-    public void  TUpdate(News entity)
+    public IResult  TUpdate(News entity)
     {
 _newsDal.Update(entity);
+return new SuccessResult(Messages.NewsUpdated);
 
     }
 
-    public void  TDelete(News entity)
+    public IResult  TDelete(News entity)
     {
 _newsDal.Delete(entity);
+return new SuccessResult(Messages.NewsDeleted);
 
     }
 }

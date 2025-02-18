@@ -7,6 +7,5 @@ public class SocialMedia:IEntity
     public string SocailMediaName { get; set; }
     public string ImageUrl { get; set; }
     public int AuthorId { get; set; }
-    public Author Author { get; set; }
     
 }
