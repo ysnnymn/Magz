@@ -3,19 +3,19 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Magz.WebUI.ViewComponents.NewsViewComponents;
 
-public class _BestOfWeekComponentPartial: ViewComponent
+public class _HotNewsComponentPartial:ViewComponent
 {
     INewsService _newsService;
 
-    public _BestOfWeekComponentPartial(INewsService newsService)
+    public _HotNewsComponentPartial(INewsService newsService)
     {
         _newsService = newsService;
     }
 
     public IViewComponentResult Invoke()
     {
-        var ressult = _newsService.GetPopularNews();
-        return View(ressult.Data);
+        var result=_newsService.GetHotNews();
+        return View(result.Data);
     }
     
 }

@@ -1,0 +1,41 @@
+@model List<News>
+<div class="line top">
+    <div>Başka Bir Haber</div>
+</div>
+<div class="row">
+    @foreach (var item in Model.Take(5))
+    {
+        <article class="col-md-12 article-list">
+            <div class="inner">
+                <figure>
+                    <a href="single.html">
+                        <img src="@item.ImageUrl" alt="Sample Article">
+                    </a>
+                </figure>
+                <div class="details">
+                    <div class="detail">
+                        <div class="category">
+                            <a href="#">@item.Category.CategoryName</a>
+                        </div>
+                        <div class="time">@item.CreatedDate.ToString("MMMM yy,ddd")</div>
+                    </div>
+                    <h1><a href="single.html">@item.Title</a></h1>
+                    <p>
+                        @item.Description.Substring(0,100)
+                    </p>
+                    <footer>
+                        <a href="#" class="love"><i class="ion-android-favorite-outline"></i>
+                            <div>@item.LikeCount</div></a>
+                        <a class="btn btn-primary more" href="single.html">
+                            <div>Daha Fazlası</div>
+                            <div><i class="ion-ios-arrow-thin-right"></i></div>
+                        </a>
+                    </footer>
+                </div>
+            </div>
+        </article>
+
+    }
+
+</div>
+

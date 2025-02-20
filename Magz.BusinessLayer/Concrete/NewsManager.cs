@@ -2,6 +2,7 @@ using Magz.BusinessLayer.Abstract;
 using Magz.BusinessLayer.Constants;
 using Magz.CoreLayer.Utilities.Results;
 using Magz.DataAccessLayer.Abstract;
+using Magz.DataAccessLayer.Context;
 using Magz.EntityLayer.Concrete;
 
 namespace Magz.BusinessLayer.Concrete;
@@ -45,5 +46,27 @@ return new SuccessResult(Messages.NewsUpdated);
 _newsDal.Delete(entity);
 return new SuccessResult(Messages.NewsDeleted);
 
+    }
+
+    public IDataResult<List<News>> GetLatestNews()
+    {
+
+        return new SuccessDataResult<List<News>>(_newsDal.GetLatestNews());
+
+    }
+
+    public IDataResult<List<News>> GetRandomNews()
+    {
+        return new SuccessDataResult<List<News>>(_newsDal.GetRandomNews());
+    }
+
+    public IDataResult<List<News>> GetHotNews()
+    {
+        return new SuccessDataResult<List<News>>(_newsDal.GetHotnews());
+    }
+
+    public IDataResult<List<News>> GetPopularNews()
+    {
+        return new SuccessDataResult<List<News>>(_newsDal.GetPopularNews());
     }
 }

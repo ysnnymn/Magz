@@ -194,13 +194,13 @@ namespace Magz.DataAccessLayer.Migrations
 
                     b.HasIndex("AuthorId");
 
-                    b.ToTable("SocialMediae");
+                    b.ToTable("SocialMedia");
                 });
 
             modelBuilder.Entity("Magz.EntityLayer.Concrete.News", b =>
                 {
                     b.HasOne("Magz.EntityLayer.Concrete.Category", "Category")
-                        .WithMany()
+                        .WithMany("News")
                         .HasForeignKey("CategoryId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -220,6 +220,11 @@ namespace Magz.DataAccessLayer.Migrations
             modelBuilder.Entity("Magz.EntityLayer.Concrete.Author", b =>
                 {
                     b.Navigation("SocialMedias");
+                });
+
+            modelBuilder.Entity("Magz.EntityLayer.Concrete.Category", b =>
+                {
+                    b.Navigation("News");
                 });
 #pragma warning restore 612, 618
         }

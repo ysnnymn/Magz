@@ -6,6 +6,6 @@ public class Category:IEntity
 {
     public int CategoryId { get; set; }
     public string CategoryName { get; set; }
-    List<News> NewsList { get; set; }
+    public List<News> News { get; set; }
     
 }

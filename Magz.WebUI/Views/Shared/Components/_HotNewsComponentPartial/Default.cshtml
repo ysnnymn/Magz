@@ -1,0 +1,37 @@
+@model List<News>
+<div class="col-md-6 col-sm-6">
+                        <h1 class="title-col">
+                         Yeni Haberler
+                            <div class="carousel-nav" id="hot-news-nav">
+                                <div class="prev">
+                                    <i class="ion-ios-arrow-left"></i>
+                                </div>
+                                <div class="next">
+                                    <i class="ion-ios-arrow-right"></i>
+                                </div>
+                            </div>
+                        </h1>
+                        <div class="body-col vertical-slider" data-max="4" data-nav="#hot-news-nav" data-item="article">
+                            @foreach (var item in Model)
+                            {
+                                <article class="article-mini">
+                                    <div class="inner">
+                                        <figure>
+                                            <a href="single.html">
+                                                <img src="@item.ImageUrl" alt="Sample Article">
+                                            </a>
+                                        </figure>
+                                        <div class="padding">
+                                            <h1><a href="single.html">@item.Title</a></h1>
+                                            <div class="detail">
+                                                <div class="category"><a href="category.html">@item.Category.CategoryName</a></div>
+                                                <div class="time">@item.CreatedDate.ToString("MMMM yy,dddd")</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </article>
+                            }
+                          
+
+                        </div>
+                    </div>
